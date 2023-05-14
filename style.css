@@ -1,8 +1,15 @@
+/**/
 body {
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
   }
   
+  /*defines a multi-line text input control. often used 
+  in a form, to collect user inputs like comments or 
+  reviews.*/
+  /*cols- Specifies the visible width of a text area.
+  rows-Specifies the visible number of lines in a 
+  text area*/
   textarea {
     background: transparent;
     border: none;
@@ -12,39 +19,47 @@ body {
     padding: 10px;
   }
   
+  /*part of textarea*/
   .description {
     white-space: pre-wrap;
   }
   
+  /*for each block section of past present and future*/
   .time-block {
     border-radius: 15px;
   }
   
+  /*for each block section of past present and future*/
   .row {
     border-top: 1px solid white;
   }
   
+  /*afftects the left row showing the times*/
   .hour {
     background-color: #ffffff;
     color: #000000;
     border-top: 1px dashed #000000;
   }
   
+  /*only the past sections*/
   .past {
     background-color: #d3d3d3;
     color: white;
   }
   
+  /*only the present sections*/
   .present {
     background-color: #ff6961;
     color: white;
   }
   
+  /*only the future sections*/
   .future {
     background-color: #77dd77;
     color: white;
   }
   
+  /*THe save botton right colum*/
   .saveBtn {
     border-left: 1px solid black;
     border-top-right-radius: 15px;
@@ -53,6 +68,7 @@ body {
     color: white;
   }
   
+  /*save btn hover*/
   .saveBtn i:hover {
     font-size: 20px;
     transition: all 0.3s ease-in-out;
