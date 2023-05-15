@@ -12,6 +12,9 @@ $(function () {
     var savebtn = $(".time-block");
     var todos = [];
 
+    var currentDate = dayjs();
+    $("#currentDay").text(currentDate.format("MMM D, YYYY"));
+
     savebtn.on("click", "button", function() {
         console.log("clicked!")
             var value = $(this).siblings(".description").val();
@@ -25,6 +28,7 @@ $(function () {
             renderToDoItem();
     });
 
+    //need to save on reload!!!
     function renderToDoItem() {
         // Get stored todos from localStorage
         var LastUserInput = JSON.parse(localStorage.getItem(".time-block"));
