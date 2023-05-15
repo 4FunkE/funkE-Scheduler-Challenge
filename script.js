@@ -11,23 +11,21 @@ $(function () {
     // useful when saving the description in local storage?
     var savebtn = $(".time-block");
 
-
-    function renderToDoItem() {
-        var userInput = $("#userInput");
-      
-        userInput.textContent = userInput;
-      };
-
     savebtn.on("click", "button", function() {
         console.log("clicked!")
 
         var userInput = $("#userInput").value
 
-        localStorage.setItem("To do: ", userInput); //+ time
+        localStorage.setItem("To do: ", JSON.stringify(userInput)); //+ time
 
         renderToDoItem();
     });
 
+    function renderToDoItem() {
+        var LastUserInput = JSON.parse(localStorage.getItem("userInput"));
+      
+        userInput.textContent = LastUserInput;
+      };
     
 
 
