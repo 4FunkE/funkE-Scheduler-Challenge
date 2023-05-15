@@ -10,22 +10,32 @@ $(function () {
     // time-block containing the button that was clicked? How might the id be
     // useful when saving the description in local storage?
     var savebtn = $(".time-block");
+    var todos = [];
 
     savebtn.on("click", "button", function() {
         console.log("clicked!")
-
-        var userInput = $("#userInput").value
-
-        localStorage.setItem("To do: ", JSON.stringify(userInput)); //+ time
-
-        renderToDoItem();
+            var value = $(this).siblings(".description").val();
+            var time = $(this).parent().attr("id");
+            
+            console.log(value);
+            console.log(time);
+            
+            // save in localStorage
+            localStorage.setItem(time, value);
+            renderToDoItem();
     });
 
     function renderToDoItem() {
-        var LastUserInput = JSON.parse(localStorage.getItem("userInput"));
+        // Get stored todos from localStorage
+        var LastUserInput = JSON.parse(localStorage.getItem(".time-block"));
       
-        userInput.textContent = LastUserInput;
+        // If todos were retrieved from localStorage, update the todos array to it
+        if (LastUserInput !== null) {
+            todos = LastUserInput;
+          }
       };
+
+      renderToDoItem();
     
 
 
