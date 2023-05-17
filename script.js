@@ -11,6 +11,13 @@ $(function () {
     // useful when saving the description in local storage?
     var savebtn = $(".time-block");
     var todos = [];
+    var hour9 = $("#hour-9");
+    var hour10 = $("#hour-10");
+    
+    var allToDos = {
+      hour9: hour9.value,
+      hour10: hour10.value,
+    }
 
     var currentDate = dayjs();
     $("#currentDay").text(currentDate.format("MMM D, YYYY"));
@@ -31,15 +38,14 @@ $(function () {
     //need to save on reload!!!
     function renderToDoItem() {
         // Get stored todos from localStorage
-        var LastUserInput = JSON.parse(localStorage.getItem(".time-block"));
+        var lastUserInput = localStorage.getItem("hour-9");
+        console.log(lastUserInput)
       
         // If todos were retrieved from localStorage, update the todos array to it
-        if (LastUserInput !== null) {
-            todos = LastUserInput;
+        if (lastUserInput !== null) {
+            todos = lastUserInput;
           }
       };
-
-      renderToDoItem();
     
 
 
