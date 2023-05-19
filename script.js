@@ -23,9 +23,15 @@ $(function () {
     function updateTime() {
       //current hour
       var currentHour = dayjs().hour();
-
+      //collect for each id
       $(".time-block").each(function() {
         var blockHour = parseInt($(this).attr("id").split("-")[1]);
+
+      //if else moving current time with blocks
+      if (blockHour < currentHour) {
+        $(this).addClass("past");
+      } 
+
       })
     }
     updateTime();
