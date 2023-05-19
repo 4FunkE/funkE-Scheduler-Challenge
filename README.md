@@ -15,7 +15,7 @@ This website is used as a planner during regular buisness hours 9am-5pm. The sch
 
 Please use the following link to open and use web application:
 
-- 
+- https://4funke.github.io/funkE-Scheduler-Challenge/
 
 ## Usage
 
