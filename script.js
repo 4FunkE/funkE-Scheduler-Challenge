@@ -28,6 +28,7 @@ $(function () {
         var blockHour = parseInt($(this).attr("id").split("-")[1]);
       })
     }
+    updateTime();
 
 
     // TODO: Add code to get any user input that was saved in localStorage and set
