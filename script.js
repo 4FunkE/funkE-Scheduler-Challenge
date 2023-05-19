@@ -30,10 +30,17 @@ $(function () {
       //if else moving current time with blocks
       if (blockHour < currentHour) {
         $(this).addClass("past");
-      } 
-
-      })
+      } else if (blockHour === currentHour) {
+        $(this).removeClass("past");
+        $(this).addClass("present");
+      } else {
+        $(this).removeClass("past");
+        $(this).removeCLass("present");
+        $(this).addClass("future");
+      }
+    });
     }
+    //call function
     updateTime();
 
 
